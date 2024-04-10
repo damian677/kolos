@@ -1,6 +1,6 @@
 import os
 import shutil
-
+#KAcper tu byl
 
 
 sciezka_katalogu = 'zadanie1'
