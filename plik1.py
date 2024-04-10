@@ -1,6 +1,7 @@
 import os
 import shutil
 #KAcper tu byl
+#Kiryl tez, BOOM
 
 
 sciezka_katalogu = 'zadanie1'
