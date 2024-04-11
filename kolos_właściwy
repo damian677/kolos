@@ -1,0 +1,46 @@
+class czytelnik:
+    def otworz(self):
+        nazwa_pliku =input("podaj nazwe pliku do otwarcie: ")
+        with open(nazwa_pliku,"r") as f:
+            self.plik = f.readlines()
+    def czytam(self):
+        nazwa_pliku =input("podaj nazwe pliku do otwarcie: ")
+        self.plik1 = ""
+        with open(nazwa_pliku,"r") as f:
+            for i in range(len(self.plik)):
+                if i % 2 == 0:
+                    self.plik1+=str((self.plik[i]))
+        print(self.plik1)
+    def szukam(self):
+        self.ciag_do_zliczenia  = input("podaj sukany ciąg: ")
+        isnienie = 0
+        for line in self.plik:
+            self.ilosc = line.count(self.ciag_do_zliczenia)
+            if self.ilosc >0:
+                isnienie+=1
+        if isnienie>0:
+            print("szukany ciąg istnieje")
+        else:
+            print("nie istnieje")
+    def licz(self,ciag):
+        self.ciag_do_zliczenia = ciag
+        isnienie = 0
+        for line in self.plik:
+            self.ilosc = line.count(self.ciag_do_zliczenia)
+            if self.ilosc > 0:
+                isnienie += self.ilosc
+        print("istnieje: ",isnienie," podanych ciagow")
+    def najczesciej(self):
+        for line in self.plik1:
+            parts = line.strip().split(",")
+            set1 =set(parts)
+            print(set1)
+
+
+
+
+czyt = czytelnik()
+czyt.otworz()
+czyt.czytam()
+czyt.szukam()
+czyt.licz("lorem")
